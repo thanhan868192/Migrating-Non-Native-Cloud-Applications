@@ -62,30 +62,25 @@ def main(msg: func.ServiceBusMessage):
             connection.close()
             logging.info("Postgres Server is closed connection")   
         
-def send_email(email, subject, body):
-    smtp_server = "smtp.gmail.com"
-    smtp_port = 587
+# def send_email(email, subject, body):
     
-    sender_email = "lehuutam741@gmail.com"
-    app_password = "idvj kqtl pszl bugl"
+#     msg = MIMEMultipart()
+#     msg['From'] = sender_email
+#     msg['To'] = email
+#     msg['Subject'] = subject
     
-    msg = MIMEMultipart()
-    msg['From'] = sender_email
-    msg['To'] = email
-    msg['Subject'] = subject
+#     msg.attach(MIMEText(body, 'plain'))
     
-    msg.attach(MIMEText(body, 'plain'))
-    
-    try:
-        server = smtplib.SMTP(smtp_server, smtp_port)
-        server.starttls()
+#     try:
+#         server = smtplib.SMTP(smtp_server, smtp_port)
+#         server.starttls()
         
-        server.login(sender_email, app_password)
+#         server.login(sender_email, app_password)
         
-        server.sendmail(sender_email, email, msg.as_string())
+#         server.sendmail(sender_email, email, msg.as_string())
         
-        server.quit()
+#         server.quit()
         
-        print("Email sent successfullt.")
-    except Exception as e:
-        print(f"failed to send mail: {e}")    
+#         print("Email sent successfullt.")
+#     except Exception as e:
+#         print(f"failed to send mail: {e}")    
