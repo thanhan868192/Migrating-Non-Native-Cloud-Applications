@@ -61,11 +61,34 @@ You will need to install the following locally:
 ## Monthly Cost Analysis
 Complete a month cost analysis of each Azure resource to give an estimate total cost using the table below:
 
-| Azure Resource | Service Tier | Monthly Cost |
-| ------------ | ------------ | ------------ |
-| *Azure Postgres Database* |     |              |
-| *Azure Service Bus*   |         |              |
-| ...                   |         |              |
-
+| Azure Resource              | Service Tier    | Monthly Cost    |
+| ----------------------------| ----------------| ----------------|
+| *Azure Postgres Database*   |  Standard_B1ms  |  $35.84        |
+| *Azure Service Bus*         |  Standard       |  $0.05         |
+| *Azure Fuction App*         |  Consumption    |  $0.00         |
+| *Azure Web App*             |  Basic (B1)     |  $13.87        |  
+| *Storage Account*           |  Standard       |  $16,594.17    |
+| *Total*                     |                 |  $16,643.93    |
 ## Architecture Explanation
 This is a placeholder section where you can provide an explanation and reasoning for your architecture selection for both the Azure Web App and Azure Function.
+
+- The Azure Web App hosts the frontend of the application, providing a scalable and reliable platform for serving web pages to users.
+It ensures the application can handle increased traffic by automatically scaling resources as needed, making it suitable for applications with varying workloads.
+Azure Web App simplifies deployment and management tasks, allowing developers to focus on building and improving the frontend user experience.
+By separating the frontend from the backend, it enables easier maintenance, upgrades, and debugging, as changes to one component don't directly impact the other.
+Azure Functions:
+
+- Azure Functions serve as the backend processing layer, handling various tasks asynchronously.
+They can process user requests for data, handle background tasks, or respond to events triggered by other services or components.
+Azure Functions reduce operational overhead by automatically scaling based on incoming events, ensuring efficient resource utilization and cost-effectiveness.
+Their event-driven nature makes them well-suited for scenarios where actions need to be triggered based on specific events or conditions.
+By offloading processing tasks to Azure Functions, the web application's responsiveness is improved, as heavy computational tasks don't block the main execution thread.
+Scalability and Flexibility:
+
+- The combined use of Azure Web App and Azure Functions provides a flexible architecture that can adapt to various application requirements and scale seamlessly to meet demand.
+Azure Functions' auto-scaling capabilities ensure that resources are allocated efficiently, reducing the risk of under utilization or over-provisioning.
+As traffic to the application increases, both Azure Web App and Azure Functions can dynamically scale resources to handle the load, ensuring a consistent user experience.
+Efficient Resource Utilization:
+
+- Azure Functions' pay-as-you-go pricing model allows for efficient resource utilization, as you only pay for the compute resources used during execution.
+This cost-effective approach makes Azure Functions suitable for applications with sporadic or unpredictable workloads, as resources are allocated dynamically based on demand.
